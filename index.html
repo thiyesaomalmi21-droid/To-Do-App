@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css"><link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
+
 <body>
-   
+
     <div class="container">
         <h1>To Do - List</h1>
         <hr>
-        <input type="button" value="+" onclick="document.getElementById('addToDo').showModal()">
+        <input type="button" value="Add(+)" onclick="document.getElementById('addToDo').showModal()">
         <hr>
 
         <dialog id="addToDo">
-            <h2>Pop-up Title</h2>
+            <h2>Adding a Task</h2>
             <table>
                 <tr>
-                    <td >Title</td>
-                    <td ><input type="text" name="" id="titleField"></td>
+                    <td>Title</td>
+                    <td><input type="text" name="" id="titleField"></td>
                 </tr>
                 <tr>
-                    <td >Time</td>
-                    <td ><input type="text" name="" id="timeField"></td>
+                    <td>Time</td>
+                    <td><input type="text" name="" id="timeField"></td>
                 </tr>
             </table>
-            
+
             <input type="button" value="+" onclick="addigTheCheckList()">
             <button onclick="document.getElementById('addToDo').close()">Close</button>
         </dialog>
 
-        <div>
-            <table id="checkListtbl">
-                <tr>
-                    <td><label for="" id="lbl">study</label></td>
-                    <td><input type="checkbox" name="" id="checkBox" ></td>
-                </tr>
-            </table>
+        <div id="checkListtbl" class="row">
             
-                
+
+
         </div>
-        
+
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
