@@ -9,17 +9,17 @@ function openAlert() {
 // checkBox1.addEventListener("change", () => {
 //     label.style.textDecoration = checkBox1.checked ? "line-through" : "none";
 // });
-function deleteFunction(index){
-    
+function deleteFunction(index) {
+
     console.log(index);
-    todo.splice(index,1);
+    todo.splice(index, 1);
     rePaintCards();
-    
+
 }
 
-function rePaintCards(){
-    let body =``;
-    todo.forEach((x,index) => {
+function rePaintCards() {
+    let body = ``;
+    todo.forEach((x, index) => {
 
         body += `
        
@@ -41,18 +41,18 @@ function rePaintCards(){
 function addigTheCheckList() {
     let titlename = document.getElementById("titleField").value;
     let timelap = document.getElementById("timeField").value;
-    let discription=document.getElementById("DiscriptionField").value;
+    let discription = document.getElementById("DiscriptionField").value;
 
     arrayB = {
         title: titlename,
         timel: timelap,
-        descrip : discription
+        descrip: discription
     }
     todo.push(arrayB);
     console.log(todo);
     let body = ``
 
-    todo.forEach((x,index) => {
+    todo.forEach((x, index) => {
 
         body += `
        
@@ -61,12 +61,20 @@ function addigTheCheckList() {
                     <h4 class="card-title">${x.title}</h4>
                     <p class="card-subtitle fg-3">${x.timel}</p>
                     <p class="card-text">${x.descrip}</p>
+                    
+                    <table>
+                         <tr>
+                            <td><input type="button" value="Delete" class="btn-solid" onclick="deleteFunction(${index})"></td>
+                             <td><input type="button" value="Done" class="btn-solid" onclick=""></td>
+                        </tr>
+                    </table>
                         
-                    <input type="button" value="Delete" onclick="deleteFunction(${index})">
+                    
+                    
                 </div>
             </div>
     `
-    
+
     });
 
 
