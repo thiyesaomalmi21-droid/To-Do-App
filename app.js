@@ -21,7 +21,9 @@ function addigTheCheckList() {
     todo.push(arrayB);
     console.log(todo);
     let body = ``
-    for (let x of todo) {
+
+    todo.forEach((x,index) => {
+        let titlename=x.title;
         body += `
         <div class="card" style="max-width: 320px;">
                 <div class="card-body">
@@ -29,15 +31,22 @@ function addigTheCheckList() {
                     <p class="card-subtitle fg-3">With a card subtitle</p>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card’s content.</p>
-                    <a href="#">Card link</a>
+                        
+                    <input type="button" value="Delete" onclick="deleteFunction(${index}))">
                 </div>
             </div>
     `
-    }
+    });
 
 
     document.getElementById("checkListtbl").innerHTML = body;
 
 
 
+}
+
+function deleteFunction(index){
+    
+    console.log(index);
+    
 }
