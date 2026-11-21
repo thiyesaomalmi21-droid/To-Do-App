@@ -9,6 +9,34 @@ function openAlert() {
 // checkBox1.addEventListener("change", () => {
 //     label.style.textDecoration = checkBox1.checked ? "line-through" : "none";
 // });
+function deleteFunction(index){
+    
+    console.log(index);
+    todo.splice(index,1);
+    rePaintCards();
+    
+}
+
+function rePaintCards(){
+    let body =``;
+    todo.forEach((x,index) => {
+
+        body += `
+       
+        <div class="card" style="max-width: 320px;" >
+                <div class="card-body">
+                    <h4 class="card-title">${x.title}</h4>
+                    <p class="card-subtitle fg-3">With a card subtitle</p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card’s content.</p>
+                        
+                    <input type="button" value="Delete" onclick="deleteFunction(${index})">
+                </div>
+            </div>
+    `
+    });
+    document.getElementById("checkListtbl").innerHTML = body;
+}
 
 function addigTheCheckList() {
     let titlename = document.getElementById("titleField").value;
@@ -21,21 +49,24 @@ function addigTheCheckList() {
     todo.push(arrayB);
     console.log(todo);
     let body = ``
+    let y=0;
 
     todo.forEach((x,index) => {
-        let titlename=x.title;
+
         body += `
-        <div class="card" style="max-width: 320px;">
+       
+        <div class="card" style="max-width: 320px;" >
                 <div class="card-body">
                     <h4 class="card-title">${x.title}</h4>
                     <p class="card-subtitle fg-3">With a card subtitle</p>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card’s content.</p>
                         
-                    <input type="button" value="Delete" onclick="deleteFunction(${index}))">
+                    <input type="button" value="Delete" onclick="deleteFunction(${index})">
                 </div>
             </div>
     `
+    
     });
 
 
@@ -45,8 +76,3 @@ function addigTheCheckList() {
 
 }
 
-function deleteFunction(index){
-    
-    console.log(index);
-    
-}
