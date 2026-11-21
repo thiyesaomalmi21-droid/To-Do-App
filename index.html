@@ -11,20 +11,37 @@
     <div class="container">
         <h1>To Do - List</h1>
         <hr>
-        <input type="button" value="+" onclick="openAlert()">
-        <button onclick="document.getElementById('myModal').showModal()">Open Pop-up</button>
-
-<!-- Pop-up Container -->
-
+        <input type="button" value="+" onclick="document.getElementById('addToDo').showModal()">
         <hr>
-        <dialog id="myModal">
-    <h2>Pop-up Title</h2>
-    <p>This is a modal pop-up container.</p>
-     <button onclick="document.getElementById('myModal').close()">Close</button>
-    </dialog>
-        <h4>Study</h4>
-        <h4>Workout</h4>
-        <h4>Meal Prep</h4>
+
+        <dialog id="addToDo">
+            <h2>Pop-up Title</h2>
+            <table>
+                <tr>
+                    <td >Title</td>
+                    <td ><input type="text" name="" id="titleField"></td>
+                </tr>
+                <tr>
+                    <td >Time</td>
+                    <td ><input type="text" name="" id="timeField"></td>
+                </tr>
+            </table>
+            
+            <input type="button" value="+" onclick="addigTheCheckList()">
+            <button onclick="document.getElementById('addToDo').close()">Close</button>
+        </dialog>
+
+        <div>
+            <table id="checkListtbl">
+                <tr>
+                    <td><label for="" id="lbl">study</label></td>
+                    <td><input type="checkbox" name="" id="checkBox" ></td>
+                </tr>
+            </table>
+            
+                
+        </div>
+        
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
