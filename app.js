@@ -41,15 +41,16 @@ function rePaintCards(){
 function addigTheCheckList() {
     let titlename = document.getElementById("titleField").value;
     let timelap = document.getElementById("timeField").value;
+    let discription=document.getElementById("DiscriptionField").value;
 
     arrayB = {
         title: titlename,
-        timel: timelap
+        timel: timelap,
+        descrip : discription
     }
     todo.push(arrayB);
     console.log(todo);
     let body = ``
-    let y=0;
 
     todo.forEach((x,index) => {
 
@@ -58,9 +59,8 @@ function addigTheCheckList() {
         <div class="card" style="max-width: 320px;" >
                 <div class="card-body">
                     <h4 class="card-title">${x.title}</h4>
-                    <p class="card-subtitle fg-3">With a card subtitle</p>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card’s content.</p>
+                    <p class="card-subtitle fg-3">${x.timel}</p>
+                    <p class="card-text">${x.descrip}</p>
                         
                     <input type="button" value="Delete" onclick="deleteFunction(${index})">
                 </div>
