@@ -26,16 +26,33 @@ function rePaintCards() {
         <div class="card" style="max-width: 320px;" >
                 <div class="card-body">
                     <h4 class="card-title">${x.title}</h4>
-                    <p class="card-subtitle fg-3">With a card subtitle</p>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card’s content.</p>
+                    <p class="card-subtitle fg-3">${x.timel}</p>
+                    <p class="card-text">${x.descrip}</p>
+                    
+                    <table>
+                         <tr>
+                            <td><input type="button" value="Delete" class="btn-solid" onclick="deleteFunction(${index})"></td>
+                            <td><input type="button" value="Done" class="btn-solid" onclick=""></td>
+                            <td><input type="button" value="Edit" class="btn-solid" onclick=""></td>
+                        </tr>
+                    </table>
                         
-                    <input type="button" value="Delete" onclick="deleteFunction(${index})">
+                    
+                    
                 </div>
             </div>
     `
     });
     document.getElementById("checkListtbl").innerHTML = body;
+}
+function lineThrough() {
+    const word = "Completed";
+    const element = word;
+
+    //element.textContent = word;
+    element.style.textDecoration = "line-through";
+    console.log(word);
+    
 }
 
 function addigTheCheckList() {
@@ -65,7 +82,8 @@ function addigTheCheckList() {
                     <table>
                          <tr>
                             <td><input type="button" value="Delete" class="btn-solid" onclick="deleteFunction(${index})"></td>
-                             <td><input type="button" value="Done" class="btn-solid" onclick=""></td>
+                             <td><input type="button" value="Done" class="btn-solid" onclick="lineThrough()"></td>
+                             <td><input type="button" value="Edit" class="btn-solid" onclick=""></td>
                         </tr>
                     </table>
                         
